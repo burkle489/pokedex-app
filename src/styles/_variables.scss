@@ -1,0 +1,15 @@
+$color-blue: #0045ff;
+$color-red: #ff2e2e;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-grey: #e8e8e8;
+$color-lightgreen: #deede4;
+$color-darkgreen: #60866f;
+
+$breakpoints: (
+  "small-mobile": 360px,
+  "mobile": 480px,
+  "tablet": 768px,
+  "laptop": 1024px,
+  "desktop": 1200px,
+) !default;

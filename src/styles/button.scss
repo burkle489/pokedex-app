@@ -1,0 +1,18 @@
+
+.Button {
+    border-radius: 40%;
+    font-size: 22px;
+    width: 140px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: $color-black;
+    color: $color-white;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-blue;
+    }
+    &:active {
+        background-color: $color-red;
+    }
+}

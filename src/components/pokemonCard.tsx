@@ -34,7 +34,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
             </div>
             <div className="PokemonInfo BorderRadius-Bottom-20px">
                 <h2>{name}</h2>
-                <div className="Flex AlignItems--Baseline">
+                <div className="Info Flex AlignItems--Baseline">
                     <h4 className="Weight--Bold Width-120px">Type</h4>
                     <BodyText className="Capitalise" fontSize="Small">
                         {types.map((type, index) => (
@@ -49,7 +49,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
                         ))}
                     </BodyText>
                 </div>
-                <div className="Flex AlignItems--Baseline">
+                <div className="Info Flex AlignItems--Baseline">
                     <h4 className="Weight--Bold Width-120px">Abilities</h4>
                     <BodyText className="Capitalise" fontSize="Small">
                         {abilities.map((ability, index) => (

@@ -99,10 +99,9 @@ const IndexPage = () => {
                                         </span>
                                     </h1>
                                 </div>
-                                <div className="">
+                                <div className="HeroText">
                                     <h3 className="Margin--Top-M Weight--Light">
-                                        The comprehensive database of Pokemon{' '}
-                                        <br />
+                                        The comprehensive database of Pokemon
                                         from the original Red and Blue version.
                                     </h3>
                                     <h3 className="Margin--Bottom-M Weight--Medium">
@@ -112,7 +111,7 @@ const IndexPage = () => {
                                     <TextInput
                                         placeholder="Search the Pokedex"
                                         name="pokemonSearch"
-                                        width="600px"
+                                        className="PokemonSearch"
                                         innerComponent={
                                             <Button
                                                 text="Search"

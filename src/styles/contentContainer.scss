@@ -3,8 +3,24 @@
     min-height: 700px;
     padding: 100px 140px;
     z-index: 1;
+    &.Flex {
+        @include max-width-breakpoint('1024px') {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
     &.Footer {
         min-height: 225px;
+        @include max-width-breakpoint('1024px') {
+            flex-direction: row;
+            justify-content: center;
+        }
+        .Divider {
+            @include max-width-breakpoint('1024px') {
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+        }
     }
     &.PokemonCardsContainer {
         min-height: 930px;
@@ -17,7 +33,11 @@
         position: absolute;
         top: calc(0% - 101px);
         left: 0;
-        z-index: 2;
+        z-index: 3;
+        @include max-width-breakpoint('950px') {
+            width: 100%;
+            top: calc(0% - 85px);
+        }
     }
     .PokeballOne {
         position: absolute;
@@ -36,5 +56,23 @@
         bottom: 20%;
         left: 6%;
         z-index: 2;
+    }
+    @include max-width-breakpoint('1400px') {
+        padding: 100px 100px;
+    }
+    @include max-width-breakpoint('1300px') {
+        padding: 100px 60px;
+    }
+    @include max-width-breakpoint('1200px') {
+        padding: 100px 40px;
+    }
+    @include max-width-breakpoint('1024px') {
+        padding: 40px 40px;
+    }
+    @include max-width-breakpoint('768px') {
+        padding: 40px 30px;
+    }
+    @include max-width-breakpoint('480px') {
+        padding: 40px 10px;
     }
 }

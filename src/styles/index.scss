@@ -45,6 +45,12 @@ img {
     line-height: 0;
 }
 
+input {
+    @include max-width-breakpoint(768px) {
+        text-align: center;
+    }
+}
+
 .BodyText {
     font-weight: 400;
     font-size: 18px;
@@ -104,6 +110,21 @@ img {
         }
     }
 }
+
+.PokemonSearch {
+    width: 100%;
+}
+.HeroText {
+    width: 600px;
+    @include max-width-breakpoint(1200px) {
+        width: 480px;
+    }
+    @include max-width-breakpoint(768px) {
+        width: 100%;
+    }
+}
+
+//UTILITIES
 
 //font weights
 .Weight--Light {

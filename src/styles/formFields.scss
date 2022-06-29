@@ -21,6 +21,11 @@
     right: 0;
     bottom: 0;
     height: 60px;
+    @include max-width-breakpoint(768px) {
+        position: relative;
+        margin-top: 20px;
+        width: 100%;
+    }
 }
 
 .Width-600px {

@@ -37,6 +37,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
                 <div className="No-Background Height-100px" />
                 <div className="BorderRadius-Top-20px ImageHolder LightGreen-Background Height-170px">
                     <img className="PokemonSprite" src={sprite} />
+                    <div className="PokemonShadow" />
                 </div>
             </div>
             <div className="PokemonInfo BorderRadius-Bottom-20px">

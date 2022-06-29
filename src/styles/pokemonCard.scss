@@ -51,3 +51,16 @@
         }
     }
 }
+
+.PokemonShadow {
+    //this could do with some tweaking so that it is more accurate to the bottom of the pokemon themselves
+    position: absolute;
+    bottom: 7%;
+    left: 11%;
+    width: 80%;
+    height: 5px;
+    background-color: rgba(96, 134, 111, 0.3);
+    border-radius: 40%;
+    box-shadow: 0px 0px 7px 6px rgb(96 134 111 / 30%);
+    margin-bottom: 10px;
+}

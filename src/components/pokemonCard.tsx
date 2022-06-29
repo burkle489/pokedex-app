@@ -6,6 +6,7 @@ import { ParsedPokemonStat } from '../types/pokemonData'
 import { BodyText } from './bodyText'
 import { PokemonStat } from './pokemonStat'
 import { Divider } from './divider'
+import { STAT_BAR_COLORS } from '../constants/constants'
 
 export const PokemonCard: React.FC<PokemonCardProps> = ({
     children,
@@ -21,15 +22,6 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
         'BorderRadius-Bottom-20px',
         className
     )
-
-    const STAT_BAR_COLORS = [
-        '#00ff89',
-        '#ff0000',
-        '#0045ff',
-        '#00e2ff',
-        '#ffde52',
-        '#ff00ba',
-    ]
 
     return (
         <div className={classes}>
@@ -92,7 +84,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
     )
 }
 
-type PokemonCardProps = {
+export type PokemonCardProps = {
     children?: React.ReactNode
     className?: string
     name: string

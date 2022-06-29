@@ -167,6 +167,9 @@ input {
 .Flex {
     display: flex;
 }
+.Flex-Column {
+    flex-direction: column;
+}
 .JustifyContent--Center {
     justify-content: center;
 }
@@ -184,6 +187,14 @@ input {
 }
 .AlignItems--Baseline {
     align-items: baseline;
+}
+.Flex-Wrap {
+    flex-wrap: wrap;
+}
+.Mobile-100Width {
+    @include max-width-breakpoint(480px) {
+        width: 100%;
+    }
 }
 
 //margin
@@ -279,6 +290,9 @@ input {
 .MinWidth-120px {
     min-width: 120px;
 }
+.Width-100Percent {
+    width: 100%;
+}
 
 //border radius
 .BorderRadius-20px {
@@ -306,4 +320,51 @@ input {
 
 .Capitalise {
     text-transform: capitalize;
+}
+
+.Sticky {
+    position: sticky;
+    top: 0px;
+}
+
+.PageHeader {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(222, 237, 228, 0.97);
+    z-index: 999;
+    padding: 0px 40px;
+    .PokemonSearch {
+        max-width: 600px;
+        margin-bottom: 0;
+    }
+    @include max-width-breakpoint(768px) {
+        height: min-content;
+        padding: 20px 40px;
+    }
+    @include max-width-breakpoint(480px) {
+        height: min-content;
+        padding: 20px 20px;
+    }
+    @include max-width-breakpoint(360px) {
+        height: min-content;
+        padding: 10px 10px;
+    }
+}
+
+.header-transition-enter {
+    opacity: 0;
+}
+.header-transition-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+}
+.header-transition-exit {
+    opacity: 1;
+}
+.header-transition-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
 }

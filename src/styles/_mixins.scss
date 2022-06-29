@@ -11,3 +11,8 @@
         @content;
     }
 }
+@mixin max-height-breakpoint($bp) {
+    @media (max-height: $bp) {
+        @content;
+    }
+}

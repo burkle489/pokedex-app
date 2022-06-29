@@ -16,6 +16,7 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
+        "@types/react-transition-group": "^4.4.5",
         "axios": "^0.27.2",
         "classnames": "^2.3.1",
         "formik": "^2.2.9",
@@ -27,12 +28,13 @@
         "gatsby-source-filesystem": "^4.17.0",
         "gatsby-source-rest-api": "^0.2.3",
         "gatsby-transformer-sharp": "^4.17.0",
+        "node": "^16.15.1",
         "node-fetch": "^2.6.7",
         "react": "^18.1.0",
         "react-dom": "^18.1.0",
         "react-icons": "^4.4.0",
-        "sass": "^1.53.0",
-        "node": "^16.15.1"
+        "react-transition-group": "^4.4.2",
+        "sass": "^1.53.0"
     },
     "devDependencies": {
         "@types/node": "^17.0.45",

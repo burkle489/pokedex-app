@@ -18,11 +18,33 @@ import { PokemonCard } from '../components/pokemonCard'
 import { Divider } from '../components/divider'
 import { Modal } from '../components/Modal'
 import { PokemonModalInner } from '../components/pokemonModalInner'
+import { CSSTransition } from 'react-transition-group'
 
 const IndexPage = () => {
     const [searchedPokemon, setSearchedPokemon] =
         useState<ParsedPokemonData | null>(null)
     const [searchError, setSearchError] = useState<string | null>(null)
+    const [showHeader, setShowHeader] = useState(false)
+    const [blueNumberOfCards, setBlueNumberOfCards] = useState<number>(3)
+    const [redNumberOfCards, setRedNumberOfCards] = useState<number>(3)
+
+    const handleScroll = () => {
+        const position = window.pageYOffset
+        if (position > 400) {
+            setShowHeader(true)
+        }
+        if (position <= 400) {
+            setShowHeader(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     const query = graphql`
         {
@@ -89,6 +111,37 @@ const IndexPage = () => {
                 {(formikProps: any) => (
                     <Form>
                         <main>
+                            <CSSTransition
+                                in={showHeader}
+                                timeout={500}
+                                classNames="header-transition"
+                                unmountOnExit
+                            >
+                                <div className="PageHeader Sticky">
+                                    <TextInput
+                                        placeholder="Search the Pokedex"
+                                        name="pokemonSearch"
+                                        className="PokemonSearch Sticky"
+                                        innerComponent={
+                                            <Button
+                                                text="Search"
+                                                className="InputInnerComponent"
+                                                type="submit"
+                                                onClick={() =>
+                                                    handleSearch(
+                                                        formikProps.values
+                                                            .pokemonSearch
+                                                    )
+                                                }
+                                            />
+                                        }
+                                    />
+                                    {searchError && (
+                                        <BodyText>{searchError}</BodyText>
+                                    )}
+                                </div>
+                            </CSSTransition>
+
                             <ContentContainer className="Flex JustifyContent--SpaceBetween">
                                 <div>
                                     <h1>
@@ -141,28 +194,50 @@ const IndexPage = () => {
                                 pokeballThree={
                                     <Pokeball className="PokeballThree" />
                                 }
-                                className="Blue-Background PokemonCardsContainer"
+                                className="Blue-Background PokemonCardsContainer Flex-Column AlignItems--Center"
                             >
-                                {parsedData
-                                    .filter((pokemon) =>
-                                        pokemon.game_indices.includes('blue')
-                                    )
-                                    .map((pokemon) => (
-                                        <PokemonCard
-                                            name={pokemon.name}
-                                            key={pokemon.id}
-                                            sprite={pokemon.sprite}
-                                            types={pokemon.types}
-                                            abilities={pokemon.abilities}
-                                            stats={pokemon.stats}
-                                        />
-                                    ))}
+                                <div className=" Width-100Percent Flex Flex-Wrap JustifyContent--Center">
+                                    {parsedData
+                                        .filter((pokemon) =>
+                                            pokemon.game_indices.includes(
+                                                'blue'
+                                            )
+                                        )
+                                        .map((pokemon, index) => (
+                                            <>
+                                                {blueNumberOfCards >=
+                                                    index + 1 && (
+                                                    <PokemonCard
+                                                        name={pokemon.name}
+                                                        key={pokemon.id}
+                                                        sprite={pokemon.sprite}
+                                                        types={pokemon.types}
+                                                        abilities={
+                                                            pokemon.abilities
+                                                        }
+                                                        stats={pokemon.stats}
+                                                    />
+                                                )}
+                                            </>
+                                        ))}
+                                </div>
+                                {parsedData.length >= blueNumberOfCards && (
+                                    <Button
+                                        text="load more"
+                                        onClick={() => {
+                                            setBlueNumberOfCards(
+                                                blueNumberOfCards + 3
+                                            )
+                                        }}
+                                        className="Mobile-100Width Margin--Bottom-XL"
+                                    />
+                                )}
                             </ContentContainer>
                             <ContentContainer
                                 titleImage={
                                     <PokedexText className="TitleImage" />
                                 }
-                                className="Red-Background PokemonCardsContainer"
+                                className="Red-Background PokemonCardsContainer Flex-Column AlignItems--Center"
                                 pokeballOne={
                                     <Pokeball className="PokeballOne" />
                                 }
@@ -170,20 +245,40 @@ const IndexPage = () => {
                                     <Pokeball className="PokeballThree" />
                                 }
                             >
-                                {parsedData
-                                    .filter((pokemon) =>
-                                        pokemon.game_indices.includes('red')
-                                    )
-                                    .map((pokemon) => (
-                                        <PokemonCard
-                                            name={pokemon.name}
-                                            key={pokemon.id}
-                                            sprite={pokemon.sprite}
-                                            types={pokemon.types}
-                                            abilities={pokemon.abilities}
-                                            stats={pokemon.stats}
-                                        />
-                                    ))}
+                                <div className=" Width-100Percent Flex Flex-Wrap JustifyContent--Center">
+                                    {parsedData
+                                        .filter((pokemon) =>
+                                            pokemon.game_indices.includes('red')
+                                        )
+                                        .map((pokemon, index) => (
+                                            <>
+                                                {redNumberOfCards >=
+                                                    index + 1 && (
+                                                    <PokemonCard
+                                                        name={pokemon.name}
+                                                        key={pokemon.id}
+                                                        sprite={pokemon.sprite}
+                                                        types={pokemon.types}
+                                                        abilities={
+                                                            pokemon.abilities
+                                                        }
+                                                        stats={pokemon.stats}
+                                                    />
+                                                )}
+                                            </>
+                                        ))}
+                                </div>
+                                {parsedData.length >= redNumberOfCards && (
+                                    <Button
+                                        text="load more"
+                                        onClick={() => {
+                                            setRedNumberOfCards(
+                                                redNumberOfCards + 3
+                                            )
+                                        }}
+                                        className="Mobile-100Width Margin--Bottom-XL"
+                                    />
+                                )}
                             </ContentContainer>
                             <ContentContainer className="Flex AlignItems--Center JustifyContent--Center Footer">
                                 <PokemonLogo width={240} />

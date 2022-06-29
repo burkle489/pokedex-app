@@ -52,9 +52,8 @@
 .PokemonModalInner {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0px 40px;
-    overflow-y: scroll;
     @include max-width-breakpoint('768px') {
         flex-direction: column;
         align-items: center;
@@ -67,6 +66,10 @@
         align-items: center;
         padding: 10px 10px;
         height: calc(100% - 110px);
+    }
+    @include max-height-breakpoint('480px') {
+        overflow-y: scroll;
+        height: 95%;
     }
     .ModalImage {
         position: relative;

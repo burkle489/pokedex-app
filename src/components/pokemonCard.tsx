@@ -7,6 +7,7 @@ import { BodyText } from './bodyText'
 import { PokemonStat } from './pokemonStat'
 import { Divider } from './divider'
 import { STAT_BAR_COLORS } from '../constants/constants'
+import { CSSTransition } from 'react-transition-group'
 
 export const PokemonCard: React.FC<PokemonCardProps> = ({
     children,

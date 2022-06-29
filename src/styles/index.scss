@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
 body,
-html, * {
+html,
+* {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     margin: 0;
 }
 
 h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     font-size: 90px;
+    line-height: 90px;
     @include bp('mobile') {
         font-size: 50px;
+        line-height: 50px;
     }
 }
 
@@ -65,9 +70,90 @@ h4 {
     }
     &.Size--Regular {
         font-size: 18px;
-    @include bp('mobile') {
-        font-size: 20px;
+        @include bp('mobile') {
+            font-size: 20px;
+        }
     }
-    }
-    
+}
+//font weights
+.Weight--Light {
+    font-weight: 300;
+}
+.Weight--Medium {
+    font-weight: 500;
+}
+.Weight--Bold {
+    font-weight: 700;
+}
+
+//colors
+.Red-Background {
+    background-color: $color-red;
+}
+.Blue-Background {
+    background-color: $color-blue;
+}
+
+.Red {
+    color: $color-red;
+}
+
+.Blue {
+    color: $color-blue;
+}
+
+.TitleImage.Red path {
+    stroke: $color-red;
+}
+
+//flex utilities
+.Flex {
+    display: flex;
+}
+.JustifyContent--Center {
+    justify-content: center;
+}
+.JustifyContent--SpaceBetween {
+    justify-content: space-between;
+}
+.AlignItems--Center {
+    align-items: center;
+}
+
+//margin
+.Margin--Top-S {
+    margin-top: 10px;
+}
+.Margin--Top-M {
+    margin-top: 20px;
+}
+.Margin--Top-L {
+    margin-top: 30px;
+}
+.Margin--Bottom-S {
+    margin-bottom: 10px;
+}
+.Margin--Bottom-M {
+    margin-bottom: 20px;
+}
+.Margin--Bottom-L {
+    margin-bottom: 30px;
+}
+.Margin--Left-S {
+    margin-left: 10px;
+}
+.Margin--Left-M {
+    margin-left: 20px;
+}
+.Margin--Left-L {
+    margin-left: 30px;
+}
+.Margin--Right-S {
+    margin-right: 10px;
+}
+.Margin--Right-M {
+    margin-right: 20px;
+}
+.Margin--Right-L {
+    margin-right: 30px;
 }

@@ -1,14 +1,14 @@
-
 .Button {
-    border-radius: 40%;
+    border-radius: 40px;
     font-size: 22px;
-    width: 140px;
+    width: 200px;
     border: none;
     text-transform: uppercase;
     font-weight: 700;
     background-color: $color-black;
     color: $color-white;
     cursor: pointer;
+    height: 60px;
     &:hover {
         background-color: $color-blue;
     }

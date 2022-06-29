@@ -29,7 +29,7 @@ const config: GatsbyConfig = {
         include: /svgAssets/
       }
     }
-  }
+  },
 ]
 };
 

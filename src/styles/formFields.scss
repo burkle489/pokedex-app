@@ -1,0 +1,28 @@
+.FormField {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    position: relative;
+    .FormLabel {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+    }
+    .FormInput {
+        min-height: 60px;
+        border: 1px solid hsl(0%, 0%, 80%);
+        border-radius: 40px;
+        font-size: 22px;
+        padding: 0px 20px;
+    }
+}
+.InputInnerComponent {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+}
+
+.Width-600px {
+    width: 600px;
+}

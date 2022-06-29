@@ -1,10 +1,11 @@
 .ContentContainer {
     position: relative;
     min-height: 700px;
-.TitleImage {
-    position: absolute;
-    top: calc(0% - 101px)
-}
+    padding: 100px 140px;
+    .TitleImage {
+        position: absolute;
+        top: calc(0% - 101px);
+    }
 }
 
 .TestContainer {

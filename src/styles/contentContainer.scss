@@ -3,6 +3,9 @@
     min-height: 700px;
     padding: 100px 140px;
     z-index: 1;
+    &.Footer {
+        min-height: 225px;
+    }
     &.PokemonCardsContainer {
         min-height: 930px;
         display: flex;

@@ -79,7 +79,12 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
                             value={stat.value}
                             barColor={STAT_BAR_COLORS[index]}
                         />
-                        {index + 1 < stats.length && <Divider />}
+                        {index + 1 < stats.length && (
+                            <Divider
+                                dashed
+                                className="Margin--Bottom-XS Margin--Top-XS"
+                            />
+                        )}
                     </>
                 ))}
             </div>

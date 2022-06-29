@@ -81,11 +81,28 @@ img {
 }
 
 .Divider {
-    border-bottom-width: 1px;
-    border-bottom-style: dashed;
-    border-bottom-color: $color-grey;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    &.Divider--horizontal {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #e8e8e8;
+        &.Dashed {
+            border-bottom-style: dashed;
+        }
+        &.Black {
+            border-bottom-color: #000000;
+        }
+    }
+    &.Divider--vertical {
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: #e8e8e8;
+        &.Dashed {
+            border-left-style: dashed;
+        }
+        &.Black {
+            border-left-color: #000000;
+        }
+    }
 }
 
 //font weights
@@ -149,6 +166,9 @@ img {
 }
 
 //margin
+.Margin--Top-XS {
+    margin-top: 5px;
+}
 .Margin--Top-S {
     margin-top: 10px;
 }
@@ -157,6 +177,12 @@ img {
 }
 .Margin--Top-L {
     margin-top: 30px;
+}
+.Margin--Top-XL {
+    margin-top: 60px;
+}
+.Margin--Bottom-XS {
+    margin-bottom: 5px;
 }
 .Margin--Bottom-S {
     margin-bottom: 10px;
@@ -167,6 +193,12 @@ img {
 .Margin--Bottom-L {
     margin-bottom: 30px;
 }
+.Margin--Bottom-XL {
+    margin-bottom: 60px;
+}
+.Margin--Left-XS {
+    margin-left: 5px;
+}
 .Margin--Left-S {
     margin-left: 10px;
 }
@@ -175,6 +207,12 @@ img {
 }
 .Margin--Left-L {
     margin-left: 30px;
+}
+.Margin--Left-XL {
+    margin-left: 60px;
+}
+.Margin--Right-XS {
+    margin-right: 5px;
 }
 .Margin--Right-S {
     margin-right: 10px;
@@ -185,15 +223,24 @@ img {
 .Margin--Right-L {
     margin-right: 30px;
 }
+.Margin--Right-XL {
+    margin-right: 60px;
+}
 
 //height and widths
 //would prefer a more elegant solution than hardcoding each pixel value if given the time
 
+.Height-60px {
+    height: 60px;
+}
 .Height-100px {
     height: 100px;
 }
 .Height-170px {
     height: 170px;
+}
+.Height-225px {
+    height: 225px;
 }
 .Height-320px {
     height: 320px;
@@ -201,6 +248,9 @@ img {
 
 .Width-120px {
     width: 120px;
+}
+.Width-1px {
+    width: 1px;
 }
 .MinWidth-30px {
     min-width: 30px;

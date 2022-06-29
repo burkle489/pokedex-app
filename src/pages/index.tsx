@@ -7,12 +7,15 @@ import '../styles/index.scss'
 import '../styles/formFields.scss'
 import PokedexText from '../svgAssets/Pokedex.svg'
 import Pokeball from '../svgAssets/Pokeball.svg'
+import FluidLogo from '../svgAssets/fluid-logo.svg'
+import PokemonLogo from '../svgAssets/pokemon-logo.svg'
 import { useStaticQuery, graphql } from 'gatsby'
 import { TextInput } from '../components/formFields/textInput'
 import { parseAllPokemon } from '../helpers/parseAllPokemon'
 import { Form, Formik } from 'formik'
 import { PokemonDataQuery } from '../types/pokemonData'
 import { PokemonCard } from '../components/pokemonCard'
+import { Divider } from '../components/divider'
 
 const IndexPage = () => {
     const query = graphql`
@@ -141,6 +144,15 @@ const IndexPage = () => {
                                         stats={pokemon.stats}
                                     />
                                 ))}
+                        </ContentContainer>
+                        <ContentContainer className="Flex AlignItems--Center JustifyContent--Center Footer">
+                            <PokemonLogo width={240} />
+                            <Divider
+                                vertical
+                                black
+                                className="Margin--Left-XL Margin--Right-XL Width-1px Height-60px"
+                            />
+                            <FluidLogo width={160} />
                         </ContentContainer>
                     </main>
                 </Form>

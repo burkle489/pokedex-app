@@ -245,7 +245,7 @@ const IndexPage = () => {
                                     <Pokeball className="PokeballThree" />
                                 }
                             >
-                                <div className=" Width-100Percent Flex Flex-Wrap JustifyContent--Center">
+                                <div className="PokemonCardsContainerInner Width-100Percent Flex Flex-Wrap JustifyContent--Center">
                                     {parsedData
                                         .filter((pokemon) =>
                                             pokemon.game_indices.includes('red')

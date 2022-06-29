@@ -1,4 +1,3 @@
-//react functional component
 import React from 'react'
 import classnames from 'classnames'
 import '../styles/pokemonCard.scss'

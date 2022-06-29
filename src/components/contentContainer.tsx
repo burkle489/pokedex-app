@@ -1,4 +1,3 @@
-//react functional component called ContentContainer
 import React from 'react'
 import '../styles/contentContainer.scss'
 import classnames from 'classnames'

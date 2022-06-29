@@ -3,15 +3,6 @@ export type PokemonDataQuery = {
         nodes: PokemonNode[]
     }
 }
-
-export type PokemonData = {
-    id: string
-    name: string
-    stats: PokemonStat[]
-    types: PokemonType[]
-    abilities: PokemonAbility[]
-    game_indices: PokemonGameIndex[]
-}
 export type PokemonNode = {
     id: string
     name: string
@@ -42,5 +33,20 @@ export type PokemonGameIndex = {
     version: { name: string }
 }
 export type PokemonSprite = {
-    front_default: string
+    other: { official_artwork: { front_default: string } }
+}
+
+export type ParsedPokemonData = {
+    id: string
+    name: string
+    stats: ParsedPokemonStat[]
+    types: string[]
+    abilities: string[]
+    game_indices: string[]
+    sprite: string
+}
+
+export type ParsedPokemonStat = {
+    name: string
+    value: number
 }

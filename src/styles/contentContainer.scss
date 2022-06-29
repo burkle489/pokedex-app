@@ -2,12 +2,36 @@
     position: relative;
     min-height: 700px;
     padding: 100px 140px;
+    z-index: 1;
+    &.PokemonCardsContainer {
+        min-height: 930px;
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
     .TitleImage {
         position: absolute;
         top: calc(0% - 101px);
+        left: 0;
+        z-index: 2;
     }
-}
-
-.TestContainer {
-    background-color: $color-blue;
+    .PokeballOne {
+        position: absolute;
+        top: calc(0% - 45px);
+        right: 27%;
+        z-index: 2;
+    }
+    .PokeballTwo {
+        position: absolute;
+        top: calc(50% - 45px);
+        right: 4%;
+        z-index: 2;
+    }
+    .PokeballThree {
+        position: absolute;
+        bottom: 20%;
+        left: 6%;
+        z-index: 2;
+    }
 }

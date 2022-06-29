@@ -41,6 +41,10 @@ h4 {
     }
 }
 
+img {
+    line-height: 0;
+}
+
 .BodyText {
     font-weight: 400;
     font-size: 18px;
@@ -75,6 +79,15 @@ h4 {
         }
     }
 }
+
+.Divider {
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: $color-grey;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 //font weights
 .Weight--Light {
     font-weight: 300;
@@ -92,6 +105,12 @@ h4 {
 }
 .Blue-Background {
     background-color: $color-blue;
+}
+.LightGreen-Background {
+    background-color: $color-lightgreen;
+}
+.No-Background {
+    background-color: transparent;
 }
 
 .Red {
@@ -116,8 +135,17 @@ h4 {
 .JustifyContent--SpaceBetween {
     justify-content: space-between;
 }
+.JustifyContent--SpaceAround {
+    justify-content: space-around;
+}
+.JustifyContent--End {
+    justify-content: flex-end;
+}
 .AlignItems--Center {
     align-items: center;
+}
+.AlignItems--Baseline {
+    align-items: baseline;
 }
 
 //margin
@@ -156,4 +184,55 @@ h4 {
 }
 .Margin--Right-L {
     margin-right: 30px;
+}
+
+//height and widths
+//would prefer a more elegant solution than hardcoding each pixel value if given the time
+
+.Height-100px {
+    height: 100px;
+}
+.Height-170px {
+    height: 170px;
+}
+.Height-320px {
+    height: 320px;
+}
+
+.Width-120px {
+    width: 120px;
+}
+.MinWidth-30px {
+    min-width: 30px;
+}
+.MinWidth-120px {
+    min-width: 120px;
+}
+
+//border radius
+.BorderRadius-20px {
+    border-radius: 20px;
+}
+.BorderRadius-40px {
+    border-radius: 40px;
+}
+.BorderRadius-Top-20px {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.BorderRadius-Bottom-20px {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.BorderRadius-Top-40px {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.BorderRadius-Bottom-40px {
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.Capitalise {
+    text-transform: capitalize;
 }

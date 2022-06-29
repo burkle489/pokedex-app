@@ -1,7 +1,13 @@
-import { PokemonNode } from '../types/pokemonData'
+import {
+    ParsedPokemonData,
+    PokemonDataQuery,
+    PokemonNode,
+} from '../types/pokemonData'
 
-export const parseAllPokemon = (data: any) => {
-    data.allPokemon.nodes.map((node: PokemonNode) => {
+export const parseAllPokemon = (
+    data: PokemonDataQuery
+): ParsedPokemonData[] => {
+    const parsed = data.allPokemon.nodes.map((node: PokemonNode) => {
         const { id, name, stats, types, abilities, game_indices, sprites } =
             node
 
@@ -15,7 +21,8 @@ export const parseAllPokemon = (data: any) => {
             types: types.map((type) => type.type.name),
             abilities: abilities.map((ability) => ability.ability.name),
             game_indices: game_indices.map((indice) => indice.version.name),
-            sprite: sprites.front_default,
+            sprite: sprites.other.official_artwork.front_default,
         }
     })
+    return parsed
 }

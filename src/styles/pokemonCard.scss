@@ -1,0 +1,53 @@
+.PokemonCard {
+    width: 33%;
+    max-width: 428.5px;
+    background-color: transparent;
+    position: relative;
+    margin: 10px;
+    z-index: 3;
+    margin-bottom: 60px;
+    .PokemonInfo {
+        background-color: $color-white;
+        padding: 10px 40px;
+        height: 360px;
+        h2 {
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+        h4 {
+            margin-bottom: 10px;
+        }
+    }
+    .ImageSpace {
+        .ImageHolder {
+            position: relative;
+        }
+    }
+}
+
+.PokemonSprite {
+    height: 320px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 160px);
+    //converted #60866f to rgb to put an opacity of 0.3 on it
+    filter: drop-shadow(5px 5px 5px rgb(96, 134, 111, 0.3));
+}
+
+.PokemonStat {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .StatBar {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: $color-grey;
+        .ActiveStat {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 2px;
+        }
+    }
+}

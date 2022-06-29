@@ -6,11 +6,13 @@ import { ContentContainer } from '../components/contentContainer'
 import '../styles/index.scss'
 import '../styles/formFields.scss'
 import PokedexText from '../svgAssets/Pokedex.svg'
+import Pokeball from '../svgAssets/Pokeball.svg'
 import { useStaticQuery, graphql } from 'gatsby'
 import { TextInput } from '../components/formFields/textInput'
 import { parseAllPokemon } from '../helpers/parseAllPokemon'
 import { Form, Formik } from 'formik'
 import { PokemonDataQuery } from '../types/pokemonData'
+import { PokemonCard } from '../components/pokemonCard'
 
 const IndexPage = () => {
     const query = graphql`
@@ -42,7 +44,11 @@ const IndexPage = () => {
                         }
                     }
                     sprites {
-                        front_default
+                        other {
+                            official_artwork {
+                                front_default
+                            }
+                        }
                     }
                 }
             }
@@ -92,14 +98,50 @@ const IndexPage = () => {
                             titleImage={
                                 <PokedexText className="TitleImage Red" />
                             }
-                            className="Blue-Background"
+                            pokeballTwo={<Pokeball className="PokeballTwo" />}
+                            pokeballThree={
+                                <Pokeball className="PokeballThree" />
+                            }
+                            className="Blue-Background PokemonCardsContainer"
                         >
-                            <PokemonCard />
+                            {parsedData
+                                .filter((pokemon) =>
+                                    pokemon.game_indices.includes('blue')
+                                )
+                                .map((pokemon) => (
+                                    <PokemonCard
+                                        name={pokemon.name}
+                                        key={pokemon.id}
+                                        sprite={pokemon.sprite}
+                                        types={pokemon.types}
+                                        abilities={pokemon.abilities}
+                                        stats={pokemon.stats}
+                                    />
+                                ))}
                         </ContentContainer>
                         <ContentContainer
                             titleImage={<PokedexText className="TitleImage" />}
-                            className="Red-Background"
-                        ></ContentContainer>
+                            className="Red-Background PokemonCardsContainer"
+                            pokeballOne={<Pokeball className="PokeballOne" />}
+                            pokeballThree={
+                                <Pokeball className="PokeballThree" />
+                            }
+                        >
+                            {parsedData
+                                .filter((pokemon) =>
+                                    pokemon.game_indices.includes('red')
+                                )
+                                .map((pokemon) => (
+                                    <PokemonCard
+                                        name={pokemon.name}
+                                        key={pokemon.id}
+                                        sprite={pokemon.sprite}
+                                        types={pokemon.types}
+                                        abilities={pokemon.abilities}
+                                        stats={pokemon.stats}
+                                    />
+                                ))}
+                        </ContentContainer>
                     </main>
                 </Form>
             )}
